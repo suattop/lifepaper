@@ -1,0 +1,240 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+}
+
+/* header */
+
+.navbar-static-top {
+    border-color: #fff;
+    background-color: #fff;
+    box-shadow: 0px 1px 11px 2px rgba(42, 42, 42, 0.1);
+    border-top: 4px solid #113285;
+    border-bottom: 1px solid #e8e8e8;
+    margin-top: 0px;
+}
+
+.navbar-light .navbar-toggler {
+    border: none;
+}
+
+.navbar-brand {
+    font-weight: 900;
+    font-size: 36px;
+    margin-right: 3rem;
+}
+
+/* main */
+.slider{
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    min-height:480px;
+    width:100%;
+}
+
+.life-form{
+    max-width:600px;
+    margin:auto;
+    width:100%;
+}
+
+.form-control{
+    width: auto;
+}
+
+.submit-btn{
+    width: 300px;
+}
+
+/* Ziwei */
+.base_table .table th, .table td {
+    padding: 0px;
+}
+.table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+}
+.star_container {
+    padding: 5px 5px 0px 5px !important;
+    margin: 0;
+    height: 80px;
+}
+.star {
+    margin-right: -5px;
+    letter-spacing: 3px;
+    writing-mode: tb-rl;
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bold;
+    font-size: 12px;
+}
+.sub_star {
+    margin-right: -5px;
+    letter-spacing: 3px;
+    writing-mode: tb-rl;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+}
+.sub_star2_box div {
+    font-size: 8px;
+    writing-mode: tb-rl;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: -7px;
+    letter-spacing: 0px;
+    margin-bottom: 0px;
+    height: auto;
+}
+.sub_star3_box div {
+    font-size: 8px;
+    text-align: right;
+    vertical-align: top;
+    margin-right: -8px;
+    margin-bottom: -3px;
+    letter-spacing: 0px;
+}
+.enterFactor {
+    font-size: 12px;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    width: 70px;
+    position: absolute;
+}
+.enterFactor1, .enterFactor2 {
+    bottom: -25px;
+    left: 20%;
+    text-align: center;
+}
+.bottom_container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #eee;
+    margin: 0;
+    padding: 0px !important;
+    border-top: 1px solid #9f9f9f;
+    margin-top: 5px;
+}
+.bottom_container .yearperiod {
+    font-size: 9px;
+    padding-top: 0px;
+}
+.bottom_container .fr2 {
+    writing-mode: tb-rl;
+    height: 100%;
+    position: absolute;
+    font-size: 10px;
+    top: 0px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    border: 1px #999 solid;
+    left: 0px;
+}
+.bottom_container .fr3 {
+    writing-mode: tb-rl;
+    height: 100%;
+    position: absolute;
+    font-size: 10px;
+    top: 0px;
+    right: 0px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    border: 1px #999 solid;
+}
+
+/* Card */
+.card{
+    border-radius: 1rem;
+    padding-bottom: 1.5rem!important;
+    opacity: 1 !important;
+    box-shadow: rgba(45,45,45,0.05) 0px 2px 2px, rgba(49,49,49,0.05) 0px 4px 4px, rgba(42,42,42,0.05) 0px 8px 8px, rgba(32,32,32,0.05) 0px 16px 16px, rgba(49,49,49,0.05) 0px 32px 32px, rgba(35,35,35,0.05) 0px 64px 64px;
+    text-align: justify;
+}
+.card-title{
+    font-size:1.5rem;
+}
+
+.card-text{
+    font-size: 1rem;
+}
+
+.star-card{
+    background: url('https://images.pexels.com/photos/2007137/pexels-photo-2007137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    color: #fff;
+    border:none!important;
+}
+
+.city-card{
+    background: url('https://images.pexels.com/photos/3559235/pexels-photo-3559235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    color: #fff;
+    border:none!important;
+}
+
+.work-card{
+    background: url('https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    color: #fff;
+    border:none!important;
+}
+
+.sky-card{
+    background: url('https://images.pexels.com/photos/1703314/pexels-photo-1703314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    color: #fff;
+    border:none!important;
+}
+
+.gold-card{
+    background: url('https://images.pexels.com/photos/366551/pexels-photo-366551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    color: #fff;
+    border:none!important;
+}
+
+.sea-card{
+    background: url('https://images.pexels.com/photos/1450361/pexels-photo-1450361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    color: #fff;
+    border:none!important;
+}
+
+.lovekiss {
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    color: #fff;
+}
+
+.coldevening {
+    background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+    color: #fff;
+}
+
+.octobersilence{
+    background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+    color: #fff;
+}
+
+.accordion .card{
+    padding-bottom: 0!important;
+}
+
+.years{
+    margin-top: 20px;
+}
+
+.years .btn-link {
+    color: #000;
+    text-decoration: none;
+}    
+
+
+.years .btn-link:hover {
+    text-decoration: none;
+}
+
