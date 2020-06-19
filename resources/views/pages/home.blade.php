@@ -214,7 +214,7 @@
                         <option value="23">23時 - 下一日的子</option>
                     </select>
                 </div>
-                <div class="field_desc">*子時是每日晚上23時-1時，如你選擇23時(夜子時)。會自動換作下一日的0時(子時)</div>
+                <div class="field_desc">*子時是每日晚上23時-1時</div>
 
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
@@ -229,6 +229,5 @@
     </div>
 </div>
 <div class="container">
-    这里是首页
 </div>
 @stop
