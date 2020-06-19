@@ -10,6 +10,9 @@ use Helper;
 Use App\Models\Ziwei;
 Use App\Models\Star;
 Use App\Models\Changerecord;
+use com\nlf\calendar\util\LunarConvert;
+use Jetfuel\SolarLunar\SolarLunar;
+use Jetfuel\SolarLunar\Solar;
 
 class DestinyController extends Controller
 {
@@ -549,6 +552,7 @@ class DestinyController extends Controller
         $money_results = array_merge(Helper::changeTo($destiny, "財帛宮","化忌"), Helper::changeFrom($destiny, "財帛宮","化忌"));
         $love_results=array_merge(Helper::changeTo($destiny, "夫妻宮","化忌"),Helper::changeFrom($destiny, "夫妻宮","化忌"));
         $career_results = array_merge(Helper::changeTo($destiny, "事業宮","化忌"), Helper::changeFrom($destiny, "事業宮","化忌"));
+
         return view('destiny.show', compact('money_results', 'career_results', 'love_results','fourChange', 'destiny','life_branch', 'body_branch', 'ziweis', 'analysis','spinning','lack'));
     }
 
@@ -562,32 +566,33 @@ class DestinyController extends Controller
         if (isset($data[0])) {
             $destiny = Destiny::Find($data[0]->id);
         } else{
-            $calendar = new Calendar();
-            $result = $calendar->solar($request->born_year, $request->born_month, $request->born_day, $request->born_hour);
+            $solar = Solar::create($year, 3, 30);
+            $lunar = SolarLunar::solarToLunar($solar);
+            $lunarFormat = LunarConvert::fromYmdh($lunar->year, $lunar->month, $lunar->day, $request->born_hour);
             $destiny = Destiny::create([
                 'gender' => $request->gender,
                 'born_year'=> $request->born_year,
                 'born_month'=> $request->born_month,
                 'born_day'=> $request->born_day,
                 'born_hour'=> $request->born_hour,
-                'year_stem' => mb_substr($result['ganzhi_year'], 0, 1, "UTF-8"),
-                'year_branch' => mb_substr($result['ganzhi_year'], 1, 1, "UTF-8"),
-                'month_stem' => mb_substr($result['ganzhi_month'], 0, 1, "UTF-8"),
-                'month_branch' => mb_substr($result['ganzhi_month'], 1, 1, "UTF-8"),
-                'day_stem' => mb_substr($result['ganzhi_day'], 0, 1, "UTF-8"),
-                'day_branch' => mb_substr($result['ganzhi_day'], 1, 1, "UTF-8"),
-                'hour_stem' => mb_substr($result['ganzhi_hour'], 0, 1, "UTF-8"),
-                'hour_branch' => mb_substr($result['ganzhi_hour'], 1, 1, "UTF-8"),
-                'lunar_year'=> $result['lunar_year'],
-                'lunar_month'=> $result['lunar_month'],
-                'lunar_day'=> $result['lunar_day'],
-                'lunar_hour'=> $result['lunar_hour'],
-                'lunar_year_chi'=> $result['lunar_year_chinese'],
-                'lunar_month_chi'=> $result['lunar_month_chinese'],
-                'lunar_day_chi'=> $result['lunar_day_chinese'],
-                'lunar_hour_chi'=> $result['lunar_hour_chinese'],
-                'animal'=> $result['animal'],
-                'week_name'=> $result['week_name'],
+                'year_stem' => $lunarFormat->getYearGanExact(),
+                'year_branch' => $lunarFormat->getYearZhiExact(),
+                'month_stem' => $lunarFormat->getMonthGanExact(),
+                'month_branch' => $lunarFormat->getMonthGanExact(),
+                'day_stem' => $lunarFormat->getDayGan(),
+                'day_branch' => $lunarFormat->getDayZhi(),
+                'hour_stem' => $lunarFormat->getTimeGan(),
+                'hour_branch' => $lunarFormat->getTimeZhi(),
+                'lunar_year'=> $lunar->year,
+                'lunar_month'=> $lunar->month,
+                'lunar_day'=> $lunar->day,
+                'lunar_hour'=> $request->born_hour,
+                'lunar_year_chi'=> $lunarFormat->getYearInChinese(),
+                'lunar_month_chi'=> $lunarFormat->getMonthInChinese(),
+                'lunar_day_chi'=> $lunarFormat->getDayInChinese(),
+                'lunar_hour_chi'=> $lunarFormat->getTimeZhi(),
+                'animal'=> $lunarFormat->getYearShengXiaoExact(),
+                'week_name'=> "星期".$lunarFormat->getWeekInChinese(),
             ]);
        
         }

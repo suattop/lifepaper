@@ -2,9 +2,11 @@
 namespace App\Helpers;
 
 use App\Models\Destiny;
-use Overtrue\ChineseCalendar\Calendar;
 use Helper;
 use Illuminate\Support\Facades\DB;
+use com\nlf\calendar\util\LunarConvert;
+use Jetfuel\SolarLunar\SolarLunar;
+use Jetfuel\SolarLunar\Solar;
 
 class ZiweiHelper
 {
@@ -476,10 +478,11 @@ class ZiweiHelper
         return ($fourChange);
     }
     public static function lunar_year($year){
-        $calendar = new Calendar();
-        $date = $calendar->solar($year,3,3);
-        $result['stem'] = mb_substr($date['ganzhi_year'], 0, 1, "UTF-8");
-        $result['branch'] = mb_substr($date['ganzhi_year'], 1, 1, "UTF-8");
+        $solar = Solar::create($year, 3, 30);
+        $lunar = SolarLunar::solarToLunar($solar);
+        $lunarFormat = LunarConvert::fromYmdh($lunar->year, $lunar->month, $lunar->day,0);
+        $result['stem'] = $result->getYearGanExact();
+        $result['branch'] = $result->getYearZhiExact();
         return($result);
     }
     public static function current_decade(Destiny $destiny){

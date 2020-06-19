@@ -40,7 +40,21 @@
         },
         "classmap": [
             "database/seeds",
-            "database/factories"
+            "database/factories",
+            "app/Library"
+        ],
+        "files": [
+            "app/Library/Holiday.php",
+            "app/Library/HolidayUtil.php",
+            "app/Library/LunarConvert.php",
+            "app/Library/LunarUtil.php",
+            "app/Library/SolarConvert.php",
+            "app/Library/SolarHalfYear.php",
+            "app/Library/SolarSeason.php",
+            "app/Library/SolarUtil.php",
+            "app/Library/SolarWeek.php",
+            "app/Library/SolarYear.php",
+            "app/Library/SolarMonth.php"
         ]
     },
     "autoload-dev": {
