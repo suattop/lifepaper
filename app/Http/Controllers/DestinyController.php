@@ -10,6 +10,7 @@ use Helper;
 Use App\Models\Ziwei;
 Use App\Models\Star;
 Use App\Models\Changerecord;
+use com\nlf\calendar\util\HolidayUtil;
 use com\nlf\calendar\util\LunarConvert;
 use Jetfuel\SolarLunar\SolarLunar;
 use Jetfuel\SolarLunar\Solar;
@@ -552,7 +553,6 @@ class DestinyController extends Controller
         $money_results = array_merge(Helper::changeTo($destiny, "財帛宮","化忌"), Helper::changeFrom($destiny, "財帛宮","化忌"));
         $love_results=array_merge(Helper::changeTo($destiny, "夫妻宮","化忌"),Helper::changeFrom($destiny, "夫妻宮","化忌"));
         $career_results = array_merge(Helper::changeTo($destiny, "事業宮","化忌"), Helper::changeFrom($destiny, "事業宮","化忌"));
-
         return view('destiny.show', compact('money_results', 'career_results', 'love_results','fourChange', 'destiny','life_branch', 'body_branch', 'ziweis', 'analysis','spinning','lack'));
     }
 
@@ -566,7 +566,7 @@ class DestinyController extends Controller
         if (isset($data[0])) {
             $destiny = Destiny::Find($data[0]->id);
         } else{
-            $solar = Solar::create($year, 3, 30);
+            $solar = Solar::create($request->born_year,  $request->born_month, $request->born_day);
             $lunar = SolarLunar::solarToLunar($solar);
             $lunarFormat = LunarConvert::fromYmdh($lunar->year, $lunar->month, $lunar->day, $request->born_hour);
             $destiny = Destiny::create([
@@ -594,7 +594,6 @@ class DestinyController extends Controller
                 'animal'=> $lunarFormat->getYearShengXiaoExact(),
                 'week_name'=> "星期".$lunarFormat->getWeekInChinese(),
             ]);
-       
         }
         
         session()->flash('success', '歡迎，您將在這裡開啟一段新的旅程~');

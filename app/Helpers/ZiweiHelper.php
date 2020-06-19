@@ -481,8 +481,8 @@ class ZiweiHelper
         $solar = Solar::create($year, 3, 30);
         $lunar = SolarLunar::solarToLunar($solar);
         $lunarFormat = LunarConvert::fromYmdh($lunar->year, $lunar->month, $lunar->day,0);
-        $result['stem'] = $result->getYearGanExact();
-        $result['branch'] = $result->getYearZhiExact();
+        $result['stem'] = $lunarFormat->getYearGanExact();
+        $result['branch'] = $lunarFormat->getYearZhiExact();
         return($result);
     }
     public static function current_decade(Destiny $destiny){
