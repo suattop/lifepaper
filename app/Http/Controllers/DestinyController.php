@@ -51,7 +51,9 @@ class DestinyController extends Controller
                     $ziweiStar = 12;
                 }elseif ($x%2==0){
                     $ziweiStar = $y+$x>12?$y+$x-12:$y+$x;
-                }else{
+                }elseif ($x>$y){
+                    $ziweiStar = 12+($y-$x);
+                }else {
                     $ziweiStar = $y-$x>12?$y-$x-12:$y-$x;  
                 }
             }
