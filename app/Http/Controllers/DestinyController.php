@@ -40,13 +40,16 @@ class DestinyController extends Controller
                     Ziwei::where('branch', Helper::convertNotoBranch($destinyNo+1-$i<=0?$destinyNo+1-$i+12:$destinyNo+1-$i))->where('destiny_id', $destiny['id'])->update(['begin_age'=> ($i-1)*10+$fiveElement, 'end_age'=> ($i*10)+$fiveElement-1]);
                 }
             }
+            
             if ($destiny['lunar_day'] % $fiveElement == 0) {
                 $ziweiStar = intdiv($destiny['lunar_day'],$fiveElement)>12?intdiv($destiny['lunar_day'],$fiveElement)-12:intdiv($destiny['lunar_day'],$fiveElement);
             }
             else {
                 $y = intdiv($destiny['lunar_day'], $fiveElement)+1;
                 $x = $y*$fiveElement - $destiny['lunar_day'];
-                if ($x%2==0){
+                if ($y-$x==0){
+                    $ziweiStar = 12;
+                }elseif ($x%2==0){
                     $ziweiStar = $y+$x>12?$y+$x-12:$y+$x;
                 }else{
                     $ziweiStar = $y-$x>12?$y-$x-12:$y-$x;  
@@ -578,7 +581,7 @@ class DestinyController extends Controller
                 'year_stem' => $lunarFormat->getYearGanExact(),
                 'year_branch' => $lunarFormat->getYearZhiExact(),
                 'month_stem' => $lunarFormat->getMonthGanExact(),
-                'month_branch' => $lunarFormat->getMonthGanExact(),
+                'month_branch' => $lunarFormat->getMonthZhiExact(),
                 'day_stem' => $lunarFormat->getDayGan(),
                 'day_branch' => $lunarFormat->getDayZhi(),
                 'hour_stem' => $lunarFormat->getTimeGan(),
