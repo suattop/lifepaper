@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="container">
-    <div class="pt-2 pb-5">
+    <div class="pt-2 pb-5 ziwei">
         <div class="row">
             <div class="col-lg-6 col-sm-12 mt-3 mb-3">
                 <div class="card star-card h-100">

@@ -10926,6 +10926,7 @@ a.text-dark:focus {
 body {
   font-family: "Noto Serif TC", serif;
   font-size: 14px;
+  background: #faf1ed;
 }
 
 /* header */
@@ -10952,9 +10953,68 @@ body {
 /* main */
 
 .slider {
-  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-  min-height: 480px;
+  background: url("https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   width: 100%;
+}
+
+.slogan {
+  margin: 100px 0;
+}
+
+.slogan h1,
+.slogan h2 {
+  font-family: "Noto Sans TC";
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.slogan h1 {
+  font-size: 4rem;
+}
+
+.first-form {
+  background: #fff;
+  border-radius: 1rem;
+}
+
+.first-form h3 {
+  width: 168px;
+}
+
+.form-control {
+  background-color: #fff;
+  border: 1px solid #cccfdb;
+  border-radius: 0.5rem;
+  color: #001959;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding: 0 0.75rem;
+  width: 100%;
+  height: 3rem;
+  padding-left: 3rem;
+}
+
+label {
+  color: #465280;
+  display: block;
+  line-height: 1rem;
+  margin-bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.box select .form-control {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 32px 16px 0;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid transparent;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
 }
 
 .life-form {
@@ -10963,136 +11023,76 @@ body {
   width: 100%;
 }
 
-.form-control {
-  width: auto;
+.box label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: calc(100% - 16px);
 }
 
-.submit-btn {
-  width: 300px;
+.btn-primary {
+  line-height: 1.25rem;
+  padding: 1rem 1.75rem;
+  border-width: 0;
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+/* understand */
+
+.main .explain {
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: 42px;
+  position: relative;
+  color: #000;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 0.025em;
+}
+
+.main .explain :before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  border-bottom: 1px solid #000;
+}
+
+.main .explain .title {
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: calc(100% - 48px);
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #faf1ed;
+  padding: 0 12px;
+}
+
+.main .card {
+  border: none;
+}
+
+.main .card .card-title {
+  margin-bottom: 0;
 }
 
 /* Ziwei */
 
-.base_table .table th,
-.table td {
-  padding: 0px;
-}
-
-.table-bordered th,
-.table-bordered td {
-  border: 1px solid #dee2e6;
-}
-
-.star_container {
-  padding: 5px 5px 0px 5px !important;
-  margin: 0;
-  height: 80px;
-}
-
-.star {
-  margin-right: -5px;
-  letter-spacing: 3px;
-  -ms-writing-mode: tb-rl;
-      writing-mode: tb-rl;
-  display: inline-block;
-  vertical-align: top;
-  font-weight: bold;
-  font-size: 12px;
-}
-
-.sub_star {
-  margin-right: -5px;
-  letter-spacing: 3px;
-  -ms-writing-mode: tb-rl;
-      writing-mode: tb-rl;
-  display: inline-block;
-  vertical-align: top;
-  font-size: 11px;
-}
-
-.sub_star2_box div {
-  font-size: 8px;
-  -ms-writing-mode: tb-rl;
-      writing-mode: tb-rl;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: -7px;
-  letter-spacing: 0px;
-  margin-bottom: 0px;
-  height: auto;
-}
-
-.sub_star3_box div {
-  font-size: 8px;
-  text-align: right;
-  vertical-align: top;
-  margin-right: -8px;
-  margin-bottom: -3px;
-  letter-spacing: 0px;
-}
-
-.enterFactor {
-  font-size: 12px;
-  color: green;
-  font-weight: bold;
-  text-align: center;
-  width: 70px;
-  position: absolute;
-}
-
-.enterFactor1,
-.enterFactor2 {
-  bottom: -25px;
-  left: 20%;
-  text-align: center;
-}
-
-.bottom_container {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  background-color: #eee;
-  margin: 0;
-  padding: 0px !important;
-  border-top: 1px solid #9f9f9f;
-  margin-top: 5px;
-}
-
-.bottom_container .yearperiod {
-  font-size: 9px;
-  padding-top: 0px;
-}
-
-.bottom_container .fr2 {
-  -ms-writing-mode: tb-rl;
-      writing-mode: tb-rl;
-  height: 100%;
-  position: absolute;
-  font-size: 10px;
-  top: 0px;
-  letter-spacing: 3px;
-  font-weight: bold;
-  border: 1px #999 solid;
-  left: 0px;
-}
-
-.bottom_container .fr3 {
-  -ms-writing-mode: tb-rl;
-      writing-mode: tb-rl;
-  height: 100%;
-  position: absolute;
-  font-size: 10px;
-  top: 0px;
-  right: 0px;
-  letter-spacing: 3px;
-  font-weight: bold;
-  border: 1px #999 solid;
-}
-
-/* Card */
-
-.card {
+.ziwei .card {
   border-radius: 1rem;
   padding-bottom: 1.5rem !important;
   opacity: 1 !important;
@@ -11100,11 +11100,11 @@ body {
   text-align: justify;
 }
 
-.card-title {
+.ziwei .card .card-title {
   font-size: 1.5rem;
 }
 
-.card-text {
+.ziwei .card .card-text {
   font-size: 1rem;
 }
 
@@ -11174,5 +11174,12 @@ body {
 
 .years .btn-link:hover {
   text-decoration: none;
+}
+
+/* Footer */
+
+footer {
+  background: #000;
+  color: #faf1ed;
 }
 
