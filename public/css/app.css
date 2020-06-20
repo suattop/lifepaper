@@ -10954,6 +10954,7 @@ body {
 
 .slider {
   background: url("https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
   width: 100%;
 }
 
@@ -10968,8 +10969,16 @@ body {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-.slogan h1 {
-  font-size: 4rem;
+@media (min-width: 768px) {
+  .slogan h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .left {
+    display: none;
+  }
 }
 
 .first-form {
