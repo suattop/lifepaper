@@ -82,7 +82,7 @@ class DestinyController extends Controller
             $armyStar = $sevenStar+4>12 ? $sevenStar-8:$sevenStar+4;
             $leftDeputyStar = $destiny['lunar_month']+2>12 ? $destiny['lunar_month']-10:$destiny['lunar_month']+2;
             $rightDeputyStar = 10-$destiny['lunar_month']<=0 ? 10-$destiny['lunar_month']+12:10-$destiny['lunar_month'];
-            $punishStar = $destiny['lunar_month']+7>12 ? $destiny['lunar_month']-5:$destiny['lunar_month']-7;
+            $punishStar = $destiny['lunar_month']+7>12 ? $destiny['lunar_month']-5:$destiny['lunar_month']+7;
             $romanceStar = $destiny['lunar_month']+11>12 ? $destiny['lunar_month']-1:$destiny['lunar_month']+11;
             $hourBranchNo = Helper::convertBranchNoToNo(Helper::convertBranchToNo($destiny['hour_branch']));
             $wenquStar = $hourBranchNo+2>12 ? $hourBranchNo-10:$hourBranchNo+2;
