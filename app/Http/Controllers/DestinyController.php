@@ -570,8 +570,9 @@ class DestinyController extends Controller
         if (isset($data[0])) {
             $destiny = Destiny::Find($data[0]->id);
         } else{
-            $solar = Solar::fromYmd($request->born_year, $request->born_month, $request->born_day, $request->born_hour, 15, 0);
+            $solar = Solar::fromYmdHms($request->born_year, $request->born_month, $request->born_day, $request->born_hour, 15, 0);
             $lunar = $solar->getLunar();
+            #dd($request->born_hour, $solar,$lunar);
             $destiny = Destiny::create([
                 'gender' => $request->gender,
                 'born_year'=> $request->born_year,
