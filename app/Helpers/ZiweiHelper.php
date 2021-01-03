@@ -4,9 +4,8 @@ namespace App\Helpers;
 use App\Models\Destiny;
 use Helper;
 use Illuminate\Support\Facades\DB;
-use com\nlf\calendar\util\LunarConvert;
-use Jetfuel\SolarLunar\SolarLunar;
-use Jetfuel\SolarLunar\Solar;
+use com\nlf\calendar\Solar;
+use com\nlf\calendar\Lunar;
 
 class ZiweiHelper
 {
@@ -478,11 +477,10 @@ class ZiweiHelper
         return ($fourChange);
     }
     public static function lunar_year($year){
-        $solar = Solar::create($year, 3, 30);
-        $lunar = SolarLunar::solarToLunar($solar);
-        $lunarFormat = LunarConvert::fromYmdh($lunar->year, $lunar->month, $lunar->day,0);
-        $result['stem'] = $lunarFormat->getYearGanExact();
-        $result['branch'] = $lunarFormat->getYearZhiExact();
+        $solar = Solar::fromYmd($year, 4, 15);
+        $lunar = $solar->getLunar();
+        $result['stem'] = $lunar->getYearGan();
+        $result['branch'] = $lunar->getYearZhi();
         return($result);
     }
     public static function current_decade(Destiny $destiny){

@@ -4,8 +4,79 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de98e44dbadd6dd8774c69b4b291ad0c",
+    "content-hash": "74a88e0ceb4be30afcde7cc69865be13",
     "packages": [
+        {
+            "name": "6tail/lunar-php",
+            "version": "1.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/6tail/lunar-php.git",
+                "reference": "4330462184a09d57fa88a1e251382ebf8bfb670f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/6tail/lunar-php/zipball/4330462184a09d57fa88a1e251382ebf8bfb670f",
+                "reference": "4330462184a09d57fa88a1e251382ebf8bfb670f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-bcmath": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "com\\nlf\\calendar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "6tail",
+                    "email": "6tail@6tail.cn",
+                    "homepage": "http://6tail.cn"
+                }
+            ],
+            "description": "lunar is a calendar library for Solar and Chinese Lunar.",
+            "homepage": "https://github.com/6tail/lunar-php",
+            "keywords": [
+                "calendar",
+                "lunar",
+                "solar",
+                "五行",
+                "儒略日",
+                "八字",
+                "冲煞",
+                "凶煞宜忌",
+                "十神",
+                "吉神宜趋",
+                "喜神",
+                "干支",
+                "建除十二值星",
+                "彭祖百忌",
+                "时辰宜忌",
+                "星宿",
+                "星座",
+                "每日宜忌",
+                "生肖",
+                "福神",
+                "纳音",
+                "胎神",
+                "节假日",
+                "节日",
+                "节气",
+                "财神",
+                "阳贵神",
+                "阴贵神",
+                "青龙名堂等十二神",
+                "黄道黑道日"
+            ],
+            "time": "2020-12-18T02:21:08+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "1.3.0",
@@ -738,41 +809,6 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
-        },
-        {
-            "name": "jetfueltw/solarlunar-php",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jetfueltw/solarlunar-php.git",
-                "reference": "a92e4aff44cd30b73d36ab4a3b5e37e56a933b3a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jetfueltw/solarlunar-php/zipball/a92e4aff44cd30b73d36ab4a3b5e37e56a933b3a",
-                "reference": "a92e4aff44cd30b73d36ab4a3b5e37e56a933b3a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2"
-            },
-            "require-dev": {
-                "guzzlehttp/guzzle": "^6.5",
-                "nesbot/carbon": "^2.27",
-                "phpunit/phpunit": "^8.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Jetfuel\\SolarLunar\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "Chinese solar lunar calendar converter",
-            "time": "2019-12-18T06:23:33+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1526,53 +1562,6 @@
                 "serialize"
             ],
             "time": "2020-06-17T14:59:55+00:00"
-        },
-        {
-            "name": "overtrue/chinese-calendar",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/overtrue/chinese-calendar.git",
-                "reference": "d78e86d66a4b225defac6828bf1de42c4a9d4bdf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/chinese-calendar/zipball/d78e86d66a4b225defac6828bf1de42c4a9d4bdf",
-                "reference": "d78e86d66a4b225defac6828bf1de42c4a9d4bdf",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Overtrue\\ChineseCalendar\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "overtrue",
-                    "email": "anzhengchao@gmail.com"
-                }
-            ],
-            "description": "中国农历转换与查询工具",
-            "keywords": [
-                "Chinese",
-                "calendar",
-                "lunar",
-                "lunar2solar",
-                "solar",
-                "solar2lunar"
-            ],
-            "time": "2020-03-09T07:21:26+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -4802,6 +4791,41 @@
             "time": "2016-01-20T08:20:44+00:00"
         },
         {
+            "name": "jetfueltw/solarlunar-php",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jetfueltw/solarlunar-php.git",
+                "reference": "a92e4aff44cd30b73d36ab4a3b5e37e56a933b3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jetfueltw/solarlunar-php/zipball/a92e4aff44cd30b73d36ab4a3b5e37e56a933b3a",
+                "reference": "a92e4aff44cd30b73d36ab4a3b5e37e56a933b3a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^6.5",
+                "nesbot/carbon": "^2.27",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jetfuel\\SolarLunar\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Chinese solar lunar calendar converter",
+            "time": "2019-12-18T06:23:33+00:00"
+        },
+        {
             "name": "mockery/mockery",
             "version": "1.4.0",
             "source": {
@@ -5000,6 +5024,53 @@
                 }
             ],
             "time": "2020-04-04T19:56:08+00:00"
+        },
+        {
+            "name": "overtrue/chinese-calendar",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/overtrue/chinese-calendar.git",
+                "reference": "d78e86d66a4b225defac6828bf1de42c4a9d4bdf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/overtrue/chinese-calendar/zipball/d78e86d66a4b225defac6828bf1de42c4a9d4bdf",
+                "reference": "d78e86d66a4b225defac6828bf1de42c4a9d4bdf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Overtrue\\ChineseCalendar\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "overtrue",
+                    "email": "anzhengchao@gmail.com"
+                }
+            ],
+            "description": "中国农历转换与查询工具",
+            "keywords": [
+                "Chinese",
+                "calendar",
+                "lunar",
+                "lunar2solar",
+                "solar",
+                "solar2lunar"
+            ],
+            "time": "2020-03-09T07:21:26+00:00"
         },
         {
             "name": "phar-io/manifest",

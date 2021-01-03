@@ -10,10 +10,9 @@ use Helper;
 Use App\Models\Ziwei;
 Use App\Models\Star;
 Use App\Models\Changerecord;
-use com\nlf\calendar\util\HolidayUtil;
-use com\nlf\calendar\util\LunarConvert;
-use Jetfuel\SolarLunar\SolarLunar;
-use Jetfuel\SolarLunar\Solar;
+use com\nlf\calendar\Solar;
+use com\nlf\calendar\Lunar;
+use com\nlf\calendar\util\LunarUtil;
 
 class DestinyController extends Controller
 {
@@ -571,33 +570,32 @@ class DestinyController extends Controller
         if (isset($data[0])) {
             $destiny = Destiny::Find($data[0]->id);
         } else{
-            $solar = Solar::create($request->born_year,  $request->born_month, $request->born_day);
-            $lunar = SolarLunar::solarToLunar($solar);
-            $lunarFormat = LunarConvert::fromYmdh($lunar->year, $lunar->month, $lunar->day, $request->born_hour);
+            $solar = Solar::fromYmd($request->born_year, $request->born_month, $request->born_day, $request->born_hour, 15, 0);
+            $lunar = $solar->getLunar();
             $destiny = Destiny::create([
                 'gender' => $request->gender,
                 'born_year'=> $request->born_year,
                 'born_month'=> $request->born_month,
                 'born_day'=> $request->born_day,
                 'born_hour'=> $request->born_hour,
-                'year_stem' => $lunarFormat->getYearGanExact(),
-                'year_branch' => $lunarFormat->getYearZhiExact(),
-                'month_stem' => $lunarFormat->getMonthGanExact(),
-                'month_branch' => $lunarFormat->getMonthZhiExact(),
-                'day_stem' => $lunarFormat->getDayGan(),
-                'day_branch' => $lunarFormat->getDayZhi(),
-                'hour_stem' => $lunarFormat->getTimeGan(),
-                'hour_branch' => $lunarFormat->getTimeZhi(),
-                'lunar_year'=> $lunar->year,
-                'lunar_month'=> $lunar->month,
-                'lunar_day'=> $lunar->day,
+                'year_stem' => $lunar->getYearGan(),
+                'year_branch' => $lunar->getYearZhi(),
+                'month_stem' => $lunar->getMonthGan(),
+                'month_branch' => $lunar->getMonthZhi(),
+                'day_stem' => $lunar->getDayGan(),
+                'day_branch' => $lunar->getDayZhi(),
+                'hour_stem' => $lunar->getTimeGan(),
+                'hour_branch' => $lunar->getTimeZhi(),
+                'lunar_year'=> $lunar->getYear(),
+                'lunar_month'=> $lunar->getMonth(),
+                'lunar_day'=> $lunar->getDay(),
                 'lunar_hour'=> $request->born_hour,
-                'lunar_year_chi'=> $lunarFormat->getYearInChinese(),
-                'lunar_month_chi'=> $lunarFormat->getMonthInChinese(),
-                'lunar_day_chi'=> $lunarFormat->getDayInChinese(),
-                'lunar_hour_chi'=> $lunarFormat->getTimeZhi(),
-                'animal'=> $lunarFormat->getYearShengXiaoExact(),
-                'week_name'=> "星期".$lunarFormat->getWeekInChinese(),
+                'lunar_year_chi'=> $lunar->getYearInChinese(),
+                'lunar_month_chi'=> $lunar->getMonthInChinese(),
+                'lunar_day_chi'=> $lunar->getDayInChinese(),
+                'lunar_hour_chi'=> $lunar->getTimeZhi(),
+                'animal'=> $lunar->getYearShengXiao(),
+                'week_name'=> "星期".$solar->getWeek(),
             ]);
         }
         
