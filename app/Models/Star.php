@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Star extends Model
 {
     protected $fillable = [
-        'name', 'ziwei_id', 'destiny_id'
+        'name', 'ziwei_id', 'destiny_id',
     ];
 
     public function destiny()

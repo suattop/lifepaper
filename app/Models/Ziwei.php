@@ -12,13 +12,14 @@ class Ziwei extends Model
         'palace',
         'destiny_id',
         'begin_age',
-        'end_age'
+        'end_age',
     ];
 
     public function destiny()
     {
         return $this->belongsTo(Destiny::class);
     }
+
     public function stars()
     {
         return $this->hasMany(Star::class);
