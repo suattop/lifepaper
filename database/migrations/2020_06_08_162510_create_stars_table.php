@@ -24,7 +24,6 @@ class CreateStarsTable extends Migration
             $table->timestamps();
         });
     }
-    
 
     /**
      * Reverse the migrations.

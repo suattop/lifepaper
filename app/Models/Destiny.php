@@ -2,12 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Overtrue\ChineseCalendar\Calendar;
 use Helper;
-Use App\Models\Ziwei;
-use Illuminate\Support\Facades\DB;
-
+use Illuminate\Database\Eloquent\Model;
 
 class Destiny extends Model
 {
@@ -49,16 +45,15 @@ class Destiny extends Model
             $life_branch = Helper::lifeBranch($destiny['lunar_month'], $destiny['hour_branch']);
             $body_branch = Helper::bodyBranch($destiny['lunar_month'], $destiny['hour_branch']);
             $destiny->ziwei()->create(['stem' => Helper::findFirstStem($destiny['year_stem']),
-            'branch' => Helper::convertNotoBranch(1),
-            'palace' =>  Helper::palace($life_branch, Helper::convertNotoBranch(1)),
-            'destiny_id'=> $destiny['id']]);
-            for ($i=2; $i<=12; $i++) {
+                'branch' => Helper::convertNotoBranch(1),
+                'palace' => Helper::palace($life_branch, Helper::convertNotoBranch(1)),
+                'destiny_id' => $destiny['id']]);
+            for ($i = 2; $i <= 12; $i++) {
                 $destiny->ziwei()->create(['stem' => Helper::findOtherStem(Helper::convertNoToBranch($i), Helper::findFirstStem($destiny['year_stem'])),
-                'branch' => Helper::convertNotoBranch($i),
-                'palace' =>  Helper::palace($life_branch, Helper::convertNotoBranch($i)),
-                'destiny_id'=> $destiny['id']]);
+                    'branch' => Helper::convertNotoBranch($i),
+                    'palace' => Helper::palace($life_branch, Helper::convertNotoBranch($i)),
+                    'destiny_id' => $destiny['id']]);
             }
-
         });
     }
 

@@ -18,7 +18,4 @@ Route::get('destiny/create', 'DestinyController@create')->name('destiny.create')
 Route::post('destiny', 'DestinyController@store')->name('destiny.store');
 Route::get('destiny/{destiny}', 'DestinyController@show')->name('destiny.show');
 
-
 Auth::routes(['verify' => true]);
-
-
