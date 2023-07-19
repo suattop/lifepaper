@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DestinyController;
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PagesController@index')->name('/home');
-Route::get('destiny/create', 'DestinyController@create')->name('destiny.create');
-Route::post('destiny', 'DestinyController@store')->name('destiny.store');
-Route::get('destiny/{destiny}', 'DestinyController@show')->name('destiny.show');
+Route::get('/', [PagesController::class, 'index'])->name('/home');
+Route::get('destiny/create', [DestinyController::class, 'create'])->name('destiny.create');
+Route::post('destiny', [DestinyController::class, 'store'])->name('destiny.store');
+Route::get('destiny/{destiny}', [DestinyController::class, 'show'])->name('destiny.show');
 
 Auth::routes(['verify' => true]);
